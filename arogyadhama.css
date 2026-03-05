@@ -1,0 +1,12 @@
+/* Arogyadhama Health - Custom Styles */
+:root {
+    --arogyadhama-green: #1B4332;
+    --arogyadhama-gold: #D4A843;
+    --arogyadhama-mint: #52B788;
+    --arogyadhama-cream: #FDF8EF;
+}
+
+/* Navbar branding */
+.navbar-brand .app-logo {
+    filter: none;
+}
