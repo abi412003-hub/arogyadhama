@@ -1,10 +1,7 @@
 [project]
-name = "arogyadhama_health"
+name = "arogyadhama"
 version = "0.1.0"
 description = "Custom Frappe app for Arogyadhama Hospital Information Management System"
-authors = [
-    {name = "Abinash", email = "admin@arogyadhama.com"}
-]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
