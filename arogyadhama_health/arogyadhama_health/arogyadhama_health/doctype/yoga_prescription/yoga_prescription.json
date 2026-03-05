@@ -1,0 +1,218 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-03-06 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "patient_section",
+    "naming_series",
+    "patient",
+    "patient_name",
+    "column_break_p",
+    "encounter",
+    "practitioner",
+    "practitioner_name",
+    "date",
+    "section_assignment",
+    "practices_section",
+    "yoga_practices",
+    "schedule_section",
+    "morning_time",
+    "evening_time",
+    "column_break_schedule",
+    "total_duration_minutes",
+    "frequency",
+    "instructions_section",
+    "general_instructions",
+    "contraindications",
+    "notes_section",
+    "notes",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "patient_section",
+      "fieldtype": "Section Break",
+      "label": "Patient Details"
+    },
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "YP-.YYYY.-",
+      "default": "YP-.YYYY.-",
+      "reqd": 1
+    },
+    {
+      "fieldname": "patient",
+      "fieldtype": "Link",
+      "label": "Patient",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "fieldtype": "Data",
+      "label": "Patient Name",
+      "fetch_from": "patient.patient_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_p",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "encounter",
+      "fieldtype": "Link",
+      "label": "Patient Encounter",
+      "options": "Patient Encounter"
+    },
+    {
+      "fieldname": "practitioner",
+      "fieldtype": "Link",
+      "label": "Prescribed By",
+      "options": "Healthcare Practitioner",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "practitioner_name",
+      "fieldtype": "Data",
+      "label": "Practitioner Name",
+      "fetch_from": "practitioner.practitioner_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_assignment",
+      "fieldtype": "Link",
+      "label": "Section",
+      "options": "Healthcare Service Unit",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "practices_section",
+      "fieldtype": "Section Break",
+      "label": "Prescribed Yoga Practices"
+    },
+    {
+      "fieldname": "yoga_practices",
+      "fieldtype": "Table",
+      "label": "Yoga Practices",
+      "options": "Yoga Practice Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "schedule_section",
+      "fieldtype": "Section Break",
+      "label": "Schedule"
+    },
+    {
+      "fieldname": "morning_time",
+      "fieldtype": "Time",
+      "label": "Morning Session Time",
+      "default": "05:30:00"
+    },
+    {
+      "fieldname": "evening_time",
+      "fieldtype": "Time",
+      "label": "Evening Session Time",
+      "default": "17:00:00"
+    },
+    {
+      "fieldname": "column_break_schedule",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "total_duration_minutes",
+      "fieldtype": "Int",
+      "label": "Total Duration (minutes)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "frequency",
+      "fieldtype": "Select",
+      "label": "Frequency",
+      "options": "\nDaily\nTwice Daily\nAlternate Days\nWeekly\nAs Needed",
+      "default": "Daily"
+    },
+    {
+      "fieldname": "instructions_section",
+      "fieldtype": "Section Break",
+      "label": "Instructions"
+    },
+    {
+      "fieldname": "general_instructions",
+      "fieldtype": "Small Text",
+      "label": "General Instructions"
+    },
+    {
+      "fieldname": "contraindications",
+      "fieldtype": "Small Text",
+      "label": "Contraindications / Precautions"
+    },
+    {
+      "fieldname": "notes_section",
+      "fieldtype": "Section Break",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Additional Notes"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Yoga Prescription",
+      "print_hide": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-03-06 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Arogyadhama Health",
+  "name": "Yoga Prescription",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1,
+      "read": 1, "report": 1, "role": "Naturopathy Doctor", "share": 1,
+      "submit": 1, "write": 1, "cancel": 1, "amend": 1
+    },
+    {
+      "create": 0, "read": 1, "role": "Ayurveda Doctor", "write": 0
+    },
+    {
+      "create": 0, "read": 1, "role": "Therapist", "write": 0
+    },
+    {
+      "create": 0, "read": 1, "role": "Yoga Therapist Intern", "write": 0
+    },
+    {
+      "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1,
+      "read": 1, "report": 1, "role": "Arogyadhama Admin", "share": 1,
+      "submit": 1, "write": 1, "cancel": 1, "amend": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "title_field": "patient_name"
+}

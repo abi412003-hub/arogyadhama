@@ -1,0 +1,236 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-03-06 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "patient_details_section",
+    "naming_series",
+    "patient",
+    "patient_name",
+    "column_break_1",
+    "encounter",
+    "practitioner",
+    "practitioner_name",
+    "date",
+    "section_assignment",
+    "meals_section",
+    "early_morning",
+    "breakfast",
+    "mid_morning",
+    "column_break_meals",
+    "lunch",
+    "evening_snack",
+    "dinner",
+    "before_bed",
+    "restrictions_section",
+    "dietary_restrictions",
+    "special_instructions",
+    "column_break_restrictions",
+    "diet_type",
+    "calorie_target",
+    "notes_section",
+    "notes",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "patient_details_section",
+      "fieldtype": "Section Break",
+      "label": "Patient Details"
+    },
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "DC-.YYYY.-",
+      "default": "DC-.YYYY.-",
+      "reqd": 1
+    },
+    {
+      "fieldname": "patient",
+      "fieldtype": "Link",
+      "label": "Patient",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "fieldtype": "Data",
+      "label": "Patient Name",
+      "fetch_from": "patient.patient_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "encounter",
+      "fieldtype": "Link",
+      "label": "Patient Encounter",
+      "options": "Patient Encounter"
+    },
+    {
+      "fieldname": "practitioner",
+      "fieldtype": "Link",
+      "label": "Prescribed By",
+      "options": "Healthcare Practitioner",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "practitioner_name",
+      "fieldtype": "Data",
+      "label": "Practitioner Name",
+      "fetch_from": "practitioner.practitioner_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_assignment",
+      "fieldtype": "Link",
+      "label": "Section",
+      "options": "Healthcare Service Unit",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "meals_section",
+      "fieldtype": "Section Break",
+      "label": "Meal Plan"
+    },
+    {
+      "fieldname": "early_morning",
+      "fieldtype": "Small Text",
+      "label": "Early Morning (5:30 AM)"
+    },
+    {
+      "fieldname": "breakfast",
+      "fieldtype": "Small Text",
+      "label": "Breakfast (7:30 AM)"
+    },
+    {
+      "fieldname": "mid_morning",
+      "fieldtype": "Small Text",
+      "label": "Mid Morning (10:00 AM)"
+    },
+    {
+      "fieldname": "column_break_meals",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "lunch",
+      "fieldtype": "Small Text",
+      "label": "Lunch (12:30 PM)"
+    },
+    {
+      "fieldname": "evening_snack",
+      "fieldtype": "Small Text",
+      "label": "Evening Snack (4:00 PM)"
+    },
+    {
+      "fieldname": "dinner",
+      "fieldtype": "Small Text",
+      "label": "Dinner (7:00 PM)"
+    },
+    {
+      "fieldname": "before_bed",
+      "fieldtype": "Small Text",
+      "label": "Before Bed (9:00 PM)"
+    },
+    {
+      "fieldname": "restrictions_section",
+      "fieldtype": "Section Break",
+      "label": "Dietary Restrictions & Instructions"
+    },
+    {
+      "fieldname": "dietary_restrictions",
+      "fieldtype": "Small Text",
+      "label": "Dietary Restrictions"
+    },
+    {
+      "fieldname": "special_instructions",
+      "fieldtype": "Small Text",
+      "label": "Special Instructions"
+    },
+    {
+      "fieldname": "column_break_restrictions",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "diet_type",
+      "fieldtype": "Select",
+      "label": "Diet Type",
+      "options": "\nSattvic\nRajasic Controlled\nVegan\nLacto-Vegetarian\nFruit Diet\nJuice Fast\nMud Therapy Diet\nCustom",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "calorie_target",
+      "fieldtype": "Int",
+      "label": "Calorie Target (kcal/day)"
+    },
+    {
+      "fieldname": "notes_section",
+      "fieldtype": "Section Break",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Additional Notes"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Diet Chart",
+      "print_hide": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-03-06 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Arogyadhama Health",
+  "name": "Diet Chart",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1,
+      "read": 1, "report": 1, "role": "Naturopathy Doctor", "share": 1,
+      "submit": 1, "write": 1, "cancel": 1, "amend": 1
+    },
+    {
+      "create": 0, "read": 1, "role": "Ayurveda Doctor", "write": 0
+    },
+    {
+      "create": 0, "read": 1, "role": "Naturopathy Intern", "write": 0
+    },
+    {
+      "create": 0, "read": 1, "role": "Therapist", "write": 0
+    },
+    {
+      "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1,
+      "read": 1, "report": 1, "role": "Arogyadhama Admin", "share": 1,
+      "submit": 1, "write": 1, "cancel": 1, "amend": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "title_field": "patient_name"
+}
