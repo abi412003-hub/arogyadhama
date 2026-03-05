@@ -1,2 +1,0 @@
-# arogyadhama
-AYUSH HMS
